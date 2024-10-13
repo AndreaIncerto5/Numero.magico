@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function generateRandomInteger(min, max) {
+        let random = Math.random()
+        random = random * max
+        random = parseInt(random)
+        return random
+    }
+      
+
+    function sanitize(numeroIN){
+        numeroIN= numeroIN.trim()
+        return numeroIN
+    }
+
+      
+    let i=0
+    let numeroIN=0
+    let random=generateRandomInteger(1, 100)
+    do{
+    numeroIN = prompt ("INDOVINA IL NUMERO M4G1C0 TRA 1 E 100")
+    while(numeroIN===null){
+        numeroIN = prompt ("INDOVINA IL NUMERO M4G1C0 TRA 1 E 100")
+    }
+
+      
+    numeroIN=sanitize(numeroIN)
+    numeroIN=parseInt(numeroIN)
+      
+    if(numeroIN===random){
+      
+        console.log("HAI INDOVINATO")
+      
+    }else{
+      
+        if(numeroIN<random){
+          
+            console.log("il numero è troppo piccolo")
+          
+        }else{
+          
+            console.log("il numero è troppo grande")
+          
+        }
+    }
+    i=i+1
+    }while(i<5 && numeroIN!==random)
+
+    </script>
+</body>
+</html> 
